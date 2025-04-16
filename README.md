@@ -2,14 +2,26 @@
 
 This is the backend API for the HMCTS Task Manager application, built as part of a technical test. The API allows caseworkers to create, view, update, and delete tasks.
 
+---
+
+📡 Live Deployment
+The backend API is live and accessible via Render:
+
+```
+https://hmcts-task-manager-backend.onrender.com
+```
+
+---
+
 ## 📦 Tech Stack
 
 - Node.js
 - Express
-- PostgreSQL
-- Jest & Supertest (Testing)
+- PostgreSQL (hosted on Render)
+- Jest & Supertest (Unit Testing)
 - dotenv (Environment variables)
 - pg (PostgreSQL client)
+- Hosted on Render 
 
 ---
 
@@ -123,12 +135,3 @@ All responses are in JSON format.
 ├── jest.config.js      # Jest config
 └── README.md
 ```
-
----
-
-## 📌 Deployment (Optional)
-
-You can deploy this backend on [Render](https://render.com/) or any platform that supports Node.js + PostgreSQL.
-
-- Add `PORT` and `DATABASE_URL` as environment variables
-- Use `npm start` as the start command
