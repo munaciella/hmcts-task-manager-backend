@@ -19,14 +19,18 @@ exports.getTaskById = async (id) => {
 };
 
 exports.updateTaskStatus = async (id, status) => {
-  const result = await db.query(
-    `UPDATE tasks SET status = $1 WHERE id = $2 RETURNING *`,
-    [status, id]
-  );
-  return result.rows[0];
-};
+    const result = await db.query(
+      `UPDATE tasks SET status = $1 WHERE id = $2 RETURNING *`,
+      [status, parseInt(id)]
+    );
+    return result.rows[0];
+  };  
 
 exports.deleteTask = async (id) => {
-  const result = await db.query(`DELETE FROM tasks WHERE id = $1 RETURNING *`, [id]);
-  return result.rowCount > 0;
-};
+    const result = await db.query(
+      `DELETE FROM tasks WHERE id = $1 RETURNING *`,
+      [parseInt(id)]
+    );
+    return result.rowCount > 0;
+  };
+  
